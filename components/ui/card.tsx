@@ -103,4 +103,4 @@ export {
   CardContent,
 }
 
-export type { CardProps } from '@radix-ui/react-slot'
+
