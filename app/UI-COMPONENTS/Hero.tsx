@@ -16,16 +16,16 @@ export function Hero() {
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
       <div className="absolute top-0  right-0 w-72 h-72 bg-primary/10 blur-3xl rounded-full "></div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto  px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <div className=" tracking-widefont-satoshi space-y-8">
-            <motion.h1 initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 , ease: "easeInOut" , delay: 0.2 }} className="text-5xl md:text-7xl lg:text-8xl ">
+            <motion.h1 initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 , ease: "easeInOut" , delay: 0.2 }} className="sm:text-5xl text-4xl md:text-7xl lg:text-8xl ">
               Hi 👋
               <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              I'm <AuroraText className="font-satoshi tracking-wide text-7xl font-black">Corentin</AuroraText>
+              I'm <AuroraText className="font-satoshi tracking-wide text-4xl sm:text-7xl   font-black">Corentin</AuroraText>
               </span>
             </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 , ease: "easeInOut", delay: 0.3 }} className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+            <motion.p initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 , ease: "easeInOut", delay: 0.3 }} className="text-md sm:text-lg  md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
               I'm a full stack developer and I build modern SaaS applications and MVPs using cutting-edge technologies. 
               Specializing in Next.js, TypeScript, and AI integrations.
             </motion.p>
