@@ -24,7 +24,7 @@ const navigationLinks = [
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:bg-black/5 dark:border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:bg-transparent dark:border-white/5">
       <motion.div initial={{opacity:0, y:-20}} animate={{opacity:1, y:0}}  className="flex h-16 items-center justify-between gap-4 px-4 md:px-6">
       <h1 className=" hidden md:block   font-satoshi text-lg  tracking-wide font-light">Delesalle Corentin</h1>
 

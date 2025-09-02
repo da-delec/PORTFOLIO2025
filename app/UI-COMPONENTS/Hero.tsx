@@ -3,43 +3,40 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/magicui/dot-pattern";
+import GradientBlinds from "@/components/background";
 import { motion } from "motion/react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
-
+import Threads from "@/components/background";
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/20 relative overflow-hidden pt-16">
-     
-      <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
-      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
-      <div className="absolute top-0  right-0 w-72 h-72 bg-primary/10 blur-3xl rounded-full "></div>
-      
-      <div className="container mx-auto  px-6 relative z-10">
+    <section className="bg-gradient-to-br from-background to-muted/20 relative overflow-hidden pt-16">
+      <Threads
+        amplitude={0.7}
+        distance={0.7}
+        enableMouseInteraction={false}
+      >
+        <div id="info" className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           <div className=" tracking-widefont-satoshi space-y-8">
-            <motion.h1 initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 , ease: "easeInOut" , delay: 0.2 }} className="sm:text-5xl text-4xl md:text-7xl lg:text-8xl ">
-              Hi 👋
-              <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              I'm <AuroraText className="font-satoshi tracking-wide text-4xl sm:text-7xl   font-black">Corentin</AuroraText>
-              </span>
+            <motion.h1 initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 , ease: "easeInOut" , delay: 0.2 }} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold">
+              Hi 👋 I'm <AuroraText className="font-satoshi tracking-wide font-black">Corentin</AuroraText>
             </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 , ease: "easeInOut", delay: 0.3 }} className="text-md sm:text-lg  md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+            <motion.p initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 , ease: "easeInOut", delay: 0.3 }} className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
               I'm a full stack developer and I build modern SaaS applications and MVPs using cutting-edge technologies. 
               Specializing in Next.js, TypeScript, and AI integrations.
             </motion.p>
           </div>
 
-          <motion.div  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 , ease: "easeInOut", delay: 0.5 }} className="flex flex-wrap gap-4 justify-center items-center">
+          <motion.div  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 , ease: "easeInOut", delay: 0.5 }} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a className=" " href="#Stack">
-            <Button size="lg" className="group cursor-pointer">
+            <Button size="lg" className="group cursor-pointer w-full sm:w-auto text-base px-8 py-4">
               View My Expertise
-              <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             </a>
             <a className=" " href="#contact">
-            <Button variant="outline" size="lg" className="cursor-pointer">
+            <Button variant="outline" size="lg" className="cursor-pointer w-full sm:w-auto text-base px-8 py-4">
               Get In Touch
             </Button>
             </a>
@@ -55,7 +52,8 @@ export function Hero() {
             </motion.a>
           </div>
         </div>
-      </div>
+        </div>
+      </Threads>
     </section>
   );
 }
