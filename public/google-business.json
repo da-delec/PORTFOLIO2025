@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Corentin Delesalle - Full Stack Developer",
+  "description": "Freelance Full Stack Developer specializing in modern web applications with React, Next.js, Node.js, and AI integrations",
+  "url": "https://portfolio-delesalle-c.vercel.app",
+  "telephone": "",
+  "email": "contact@portfolio-delesalle-c.vercel.app",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",
+    "addressLocality": "Chartres",
+    "postalCode": "28000",
+    "addressRegion": "Eure-et-Loir",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.4469,
+    "longitude": 1.4892
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Chartres"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Eure-et-Loir"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Centre-Val de Loire"
+    },
+    {
+      "@type": "Country",
+      "name": "France"
+    }
+  ],
+  "serviceType": [
+    "Web Development",
+    "Full Stack Development",
+    "React Development",
+    "Next.js Development",
+    "Node.js Development",
+    "SaaS Development",
+    "AI Integration",
+    "Responsive Web Design"
+  ],
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": [
+    "https://linkedin.com/in/corentindelesalle",
+    "https://github.com/corentindelesalle"
+  ]
+}

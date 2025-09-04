@@ -1,0 +1,42 @@
+{
+  "business": {
+    "name": "Corentin Delesalle - Développeur Full Stack",
+    "description": "Développeur Full Stack freelance spécialisé dans la création d'applications web modernes avec React, Next.js et Node.js",
+    "address": {
+      "city": "Chartres",
+      "postalCode": "28000",
+      "region": "Eure-et-Loir",
+      "country": "France",
+      "fullAddress": "Chartres, Eure-et-Loir (28), France"
+    },
+    "services": [
+      "Développement web",
+      "Applications React",
+      "Sites Next.js",
+      "APIs Node.js",
+      "Développement Full Stack",
+      "Applications SaaS",
+      "Intégrations IA",
+      "Sites web responsives"
+    ],
+    "serviceAreas": [
+      "Chartres",
+      "Eure-et-Loir",
+      "Centre-Val de Loire",
+      "Orléans",
+      "Tours",
+      "Bourges",
+      "Châteauroux",
+      "Blois"
+    ],
+    "keywords": [
+      "développeur web Chartres",
+      "développeur freelance 28",
+      "création site web Chartres",
+      "développeur React Eure-et-Loir",
+      "développeur Next.js Centre-Val de Loire",
+      "programmeur web Chartres",
+      "développeur full stack 28000"
+    ]
+  }
+}
