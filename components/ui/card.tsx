@@ -18,7 +18,7 @@ function Card({
       className={cn(
         "flex flex-col gap-6 rounded-xl py-6 transition-all duration-300",
         cardVariants[variant],
-        variant === "default" && "hover:shadow-[0_8px_30px_rgba(139,92,246,0.12)] hover:scale-[1.02] hover:border-purple-200/50 dark:hover:border-purple-700/30",
+        variant === "default" && "hover:shadow-[0_8px_30px_rgba(13,148,136,0.12)] hover:scale-[1.02] hover:border-teal-200/50 dark:hover:border-teal-700/30",
         variant === "glass" && "hover:bg-white/10 hover:border-white/20 dark:hover:bg-black/10 dark:hover:border-white/10",
         className
       )}

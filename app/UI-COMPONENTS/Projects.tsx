@@ -103,7 +103,7 @@ export function Projects() {
                       </div>
 
                       <div className="flex gap-4">
-                        <Button asChild>
+                        <Button asChild style={{ backgroundColor: '#0891b2', color: 'white' }} className="hover:opacity-90">
                           <a href={project.demoUrl}>
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Go to Flowscriptor

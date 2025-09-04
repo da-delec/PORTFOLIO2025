@@ -132,7 +132,7 @@ export function Contact() {
                     />
                   </div>
 
-                  <Button className="w-full" size="lg" disabled={isPending}>
+                  <Button className="w-full hover:opacity-90 text-white" style={{ backgroundColor: '#0891b2' }} size="lg" disabled={isPending}>
                     {isPending ? "Sending..." : "Send Message"}
                   </Button>
                 </form>

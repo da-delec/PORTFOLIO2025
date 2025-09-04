@@ -20,11 +20,11 @@ export function Hero() {
           className="space-y-12 max-w-4xl flex flex-col  mx-auto"
         >
           <div className=" mt-16  space-y-8">
-            <Badge variant="outline" className="mx-auto px-4 py-2 text-sm font-bold bg-background/50 backdrop-blur-sm border border-border/80">
+            <Badge variant="outline" className="mx-auto px-4 py-2 text-sm font-black  bg-background/50 backdrop-blur-sm border border-border/80">
             <BorderBeam size={60} colorFrom="#0891b2" colorTo="#0891b2" />
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                Available • Full Stack Developer
+              <div className="flex items-center font-bold gap-2">
+                
+                <h1 className=" font-bold">&lt; FullStackDeveloper /&gt;</h1>
               </div>
             </Badge>
             
@@ -50,7 +50,7 @@ export function Hero() {
           <Button 
             variant="outline" 
             size="lg" 
-            className="group text-base px-6 py-3 hover:scale-105 transition-all duration-200 hover:border-primary/50 mx-auto"
+            className="group text-base px-6 py-3 hover:scale-105 transition-all duration-200 hover:border-teal-600/50 mx-auto"
           >
             <a href="#Stack" className="flex items-center gap-2">
               Discover my work

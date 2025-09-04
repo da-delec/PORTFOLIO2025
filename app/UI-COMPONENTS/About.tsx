@@ -28,7 +28,7 @@ const passions = [
     icon: Piano,
     title: "Piano",
     description: "Currently learning to play piano. The discipline and precision required translates well to programming.",
-    color: "text-purple-500"
+    color: "text-teal-600"
   },
   {
     icon: Cpu,

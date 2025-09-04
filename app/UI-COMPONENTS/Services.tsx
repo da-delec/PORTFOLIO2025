@@ -131,7 +131,7 @@ export function Services() {
                 Let's discuss your project requirements and how I can help bring your vision to life 
                 with modern technologies and best practices. Based in France, available for remote work worldwide.
               </p>
-              <Button size="lg">
+              <Button size="lg" style={{ backgroundColor: '#0891b2', color: 'white' }} className="hover:opacity-90">
                 Schedule a Consultation
               </Button>
             </div>

@@ -110,7 +110,7 @@ export default function Navbar() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
-            <AnimatedThemeToggler />
+            <AnimatedThemeToggler className=" " />
           <Button asChild variant="outline" size="sm" className="text-sm">
             <a href="#contact">Contact me</a>
           </Button>
