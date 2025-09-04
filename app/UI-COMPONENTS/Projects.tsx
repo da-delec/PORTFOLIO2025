@@ -8,6 +8,8 @@ import Image from "next/image";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { title } from "process";
+import linkfaster from "@/public/linkfaster.png";
 
 const projects = [
   {
@@ -19,6 +21,14 @@ const projects = [
     demoUrl: "https://flowscriptor-ai.vercel.app/",
  
   },
+  {
+    title:"Linkfaster",
+    description:"LinkFaster is a SaaS that lets developers, designers, and creators centralize all their links in one sleek, customizable page — a faster, smarter alternative to Linktree.",
+    image:linkfaster,
+    technologies: ["Next.js", "TypeScript", "Supabase","Prisma", "Stripe", "OpenAI","Better-auth"],
+    features: ["Real-time Analytics", "AI Insights", "Payment Integration"],
+    demoUrl: "https://linkfaster.link/",
+  }
 
 ];
 

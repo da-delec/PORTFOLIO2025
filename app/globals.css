@@ -1,11 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
-
-
-
 @font-face {
   font-family: 'Satoshi-Light';
   src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
@@ -131,10 +126,6 @@
   font-style: italic;
 }
 
-
-
-
-
 @font-face {
   font-family: 'ClashDisplay-Extralight';
   src: url('/fonts/ClashDisplay-Extralight.woff2') format('woff2'),
@@ -253,7 +244,6 @@
   font-display: swap;
   font-style: normal;
 }
-
 
 @custom-variant dark (&:is(.dark *));
 
@@ -416,4 +406,9 @@
     linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }
