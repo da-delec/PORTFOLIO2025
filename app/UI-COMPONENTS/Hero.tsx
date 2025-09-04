@@ -24,7 +24,7 @@ export function Hero() {
             <BorderBeam size={60} colorFrom="#0891b2" colorTo="#0891b2" />
               <div className="flex items-center font-bold gap-2">
                 
-                <h1 className=" font-bold">&lt; FullStackDeveloper /&gt;</h1>
+                <h1 className=" font-bold">&lt; FullStack Developer /&gt;</h1>
               </div>
             </Badge>
             
