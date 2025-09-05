@@ -20,11 +20,9 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-12 max-w-4xl flex flex-col  mx-auto"
         >
-          <div className=" mt-16  space-y-8">
-            <Badge variant="outline" className="mx-auto px-4 py-2 text-sm font-black  bg-background/50 backdrop-blur-sm border border-border/80">
-            <BorderBeam size={60} colorFrom="#0891b2" colorTo="#0891b2" />
+          <div className=" mt-8  space-y-8">
+            <Badge variant="outline" className="mx-auto px-4 py-2 text-sm font-black bg-teal-500/10 backdrop-blur-sm border border-teal-500/20 text-teal-600 dark:text-teal-400">
               <div className="flex items-center font-bold gap-2">
-                
                 <h1 className=" font-bold">&lt; FullStack Developer /&gt;</h1>
               </div>
             </Badge>
@@ -33,11 +31,10 @@ export function Hero() {
               <h1 className="text-6xl md:text-9xl lg:text-[10rem] font-['Satoshi-Black'] tracking-tighter leading-none bg-gradient-to-b from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent">
                 I'm
               </h1>
-              <AuroraText>
-              <TypingAnimation 
-              
-                className="text-6xl md:text-9xl lg:text-[10rem] font-['Satoshi-Black'] tracking-tighter leading-none bg-gradient-to-b from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent"
-               >Corentin</TypingAnimation>
+              <AuroraText
+                colors={["#0891b2", "#0d9488", "#14b8a6", "#06b6d4"]}
+                className="text-6xl md:text-9xl lg:text-[10rem] font-['Satoshi-Black'] tracking-tighter leading-none bg-gradient-to-b from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent">
+               Corentin
                </AuroraText>
             </div>
             </div>

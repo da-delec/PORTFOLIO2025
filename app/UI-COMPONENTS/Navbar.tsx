@@ -106,7 +106,7 @@ export default function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <h1 className=" md:hidden  text-xl font-satoshi  font-black">Delesalle Corentin</h1>
+          <h1 className=" md:hidden  text-lg font-satoshi  font-black">Delesalle Corentin</h1>
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
