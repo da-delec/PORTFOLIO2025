@@ -131,8 +131,22 @@ export function Services() {
                 Let's discuss your project requirements and how I can help bring your vision to life 
                 with modern technologies and best practices. Based in France, available for remote work worldwide.
               </p>
-              <Button size="lg" style={{ backgroundColor: '#0891b2', color: 'white' }} className="hover:opacity-90">
-                Schedule a Consultation
+              <Button size="lg" className="group relative overflow-hidden
+                                       bg-gradient-to-br from-white/20 via-white/10 to-white/5
+                                       backdrop-blur-xl border border-white/20
+                                       hover:bg-gradient-to-br hover:from-white/30 hover:via-white/15 hover:to-white/10
+                                       hover:border-white/30 hover:shadow-xl hover:shadow-cyan-500/20
+                                       transition-all duration-500 ease-out
+                                       before:absolute before:inset-0 before:bg-gradient-to-r 
+                                       before:from-transparent before:via-white/20 before:to-transparent
+                                       before:translate-x-[-200%] before:skew-x-12
+                                       hover:before:translate-x-[200%] before:transition-transform before:duration-1000
+                                       after:absolute after:inset-0 after:bg-gradient-to-br
+                                       after:from-cyan-400/5 after:via-blue-500/5 after:to-purple-600/5
+                                       after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500">
+                <span className="bg-gradient-to-r from-foreground to-foreground/60 dark:from-white dark:to-gray-400 bg-clip-text text-transparent font-semibold group-hover:from-foreground group-hover:to-foreground/80 dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-300 relative z-10">
+                  Schedule a Consultation
+                </span>
               </Button>
             </div>
           </div>

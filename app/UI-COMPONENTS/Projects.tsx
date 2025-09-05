@@ -103,10 +103,24 @@ export function Projects() {
                       </div>
 
                       <div className="flex gap-4">
-                        <Button asChild style={{ backgroundColor: '#0891b2', color: 'white' }} className="hover:opacity-90">
-                          <a href={project.demoUrl}>
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            Go to Flowscriptor
+                        <Button asChild className="group relative overflow-hidden
+                                       bg-gradient-to-br from-white/20 via-white/10 to-white/5
+                                       backdrop-blur-xl border border-white/20
+                                       hover:bg-gradient-to-br hover:from-white/30 hover:via-white/15 hover:to-white/10
+                                       hover:border-white/30 hover:shadow-xl hover:shadow-cyan-500/20
+                                       transition-all duration-500 ease-out
+                                       before:absolute before:inset-0 before:bg-gradient-to-r 
+                                       before:from-transparent before:via-white/20 before:to-transparent
+                                       before:translate-x-[-200%] before:skew-x-12
+                                       hover:before:translate-x-[200%] before:transition-transform before:duration-1000
+                                       after:absolute after:inset-0 after:bg-gradient-to-br
+                                       after:from-cyan-400/5 after:via-blue-500/5 after:to-purple-600/5
+                                       after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500">
+                          <a href={project.demoUrl} className="flex items-center relative z-10">
+                            <ExternalLink className="mr-2 h-4 w-4 text-foreground/70 group-hover:text-foreground dark:text-gray-400 dark:group-hover:text-gray-300" />
+                            <span className="bg-gradient-to-r from-foreground to-foreground/60 dark:from-white dark:to-gray-400 bg-clip-text text-transparent font-semibold group-hover:from-foreground group-hover:to-foreground/80 dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-300">
+                              Go to Flowscriptor
+                            </span>
                           </a>
                         </Button>
                        
