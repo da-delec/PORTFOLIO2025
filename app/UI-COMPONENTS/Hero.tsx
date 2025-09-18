@@ -31,7 +31,7 @@ export function Hero() {
       <motion.h1 
         className="absolute bottom-0 xs:mb-0  text-[118px] mb-20 xs:text-[150px] sm:text-[200px] md:text-[250px] lg:text-[300px] xl:text-[400px] font-zalando font-bold leading-none" 
         style={{ 
-          marginBottom: '-0.10em',
+     
           filter: `blur(${blur}px)`,
           opacity: opacity,
           y: y
