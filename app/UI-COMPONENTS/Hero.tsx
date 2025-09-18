@@ -22,20 +22,15 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <p className="font-zalando font-medium mclane-text-lg md:mclane-text-xl leading-relaxed text-black">
+          <p className="font-zalando font-medium mclane-text-lg md:mclane-text-xl mb-40 leading-relaxed text-black">
             <span className=" font-[Cormorant] italic font-semibold">Full Stack developer based in France.</span> Specialized in building modern web applications 
             with React, Next.js and Node.js. Currently available for new projects and collaborations.
           </p>
         </motion.div>
       </div>
       <motion.h1 
-        className="absolute bottom-0  text-[118px] xs:text-[150px] sm:text-[200px] md:text-[250px] lg:text-[300px] xl:text-[400px] font-zalando font-bold leading-none" 
-        style={{ 
-          marginBottom: '-0.10em',
-          filter: `blur(${blur}px)`,
-          opacity: opacity,
-          y: y
-        }}
+        className="absolute bottom-0 xs:mb-0  text-[118px] mb-20 xs:text-[150px] sm:text-[200px] md:text-[250px] lg:text-[300px] xl:text-[400px] font-zalando font-bold leading-none" 
+       
       >
         corentin
       </motion.h1>
