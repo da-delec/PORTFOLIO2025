@@ -1,161 +1,185 @@
 "use client"
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { sendEmail } from "@/lib/ACTION/resend";
-import { Label } from "@/components/ui/label";
-import { Mail, MessageSquare, Calendar, Github, Linkedin, Twitter } from "lucide-react";
-import { useActionState } from "react";
-import { useTransition } from "react";
-import { useInView } from "motion/react";
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react"
+import Link from "next/link"
+import { useState } from "react"
+import { sendEmail } from "@/lib/ACTION/resend"
 
 export function Contact() {
-  const [state, formAction] = useActionState(sendEmail, {});
-  const [isPending, startTransition] = useTransition();
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: false,
-    amount: 0.1,
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    const formData = new FormData(e.currentTarget)
+    try {
+      await sendEmail({}, formData)
+      setSubmitStatus('success')
+      ;(e.target as HTMLFormElement).reset()
+    } catch (error) {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
-    <motion.div 
-      ref={ref} 
-      initial={{ opacity: 0, y: 50 }} 
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <section id="contact" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl mb-6">
-                Let's Work
-                <span className="block text-primary">Together</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
-                Have a project in mind? I'm always excited to work on new challenges 
-                and help bring innovative ideas to life.
+    <section id="contact" className="bg-gray-50 text-black py-24 border-t border-gray-200">
+      <div className="mclane-grid">
+        {/* Header */}
+        <div className="col-span-12 md:col-span-24 mb-16">
+          <h2 className="mclane-text-3xl font-zalando font-light">Let's Work Together</h2>
+        </div>
+
+        {/* Contact info */}
+        <div className="col-span-12 md:col-span-8 mb-16 md:mb-0">
+          <div className="space-y-12">
+            <div>
+              <h3 className="mclane-text-xl font-zalando font-light mb-6">Get In Touch</h3>
+              <div className="space-y-4">
+                <Link 
+                  href="mailto:delesallecorentin3@gmail.com"
+                  className="block mclane-text-base font-zalando text-gray-700 hover:text-black transition-colors"
+                >
+                  delesallecorentin3@gmail.com
+                </Link>
+                <Link 
+                  href="https://linkedin.com/in/corentindelesalle"
+                  target="_blank"
+                  className="block mclane-text-base font-zalando text-gray-700 hover:text-black transition-colors"
+                >
+                  LinkedIn
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="mclane-text-sm font-zalando text-gray-400 uppercase tracking-wide mb-4">
+                Response Time
+              </h4>
+              <p className="mclane-text-base font-zalando text-gray-700">
+                Usually within 24 hours
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl mb-6">Get In Touch</h3>
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-                        <Mail className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="mb-1 font-medium">Email</h4>
-                        <a 
-                          href="mailto:corentin.delesalle@example.com" 
-                          className="text-muted-foreground font-light hover:text-primary transition-colors"
-                        >
-                          delesallecorentin3@gmail.com
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-                        <MessageSquare className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="mb-1 font-medium">Response Time</h4>
-                        <p className="text-muted-foreground font-light">Usually within 24 hours</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-                        <Calendar className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="mb-1 font-medium">Location</h4>
-                        <p className="text-muted-foreground font-light">France • Open for remote work</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-               
-              </div>
-
-              <Card className="p-8">
-                <form action={formAction} className="space-y-6">
-                  {/* Messages d'état */}
-                  {state.error && (
-                    <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-md">
-                      <p className="text-destructive text-sm">{state.error}</p>
-                    </div>
-                  )}
-                  
-                  {state.success && (
-                    <div className="p-4 bg-green-100 border border-green-200 rounded-md">
-                      <p className="text-green-800 text-sm">{state.success}</p>
-                    </div>
-                  )}
-
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" name="name" placeholder="Your name" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" name="email" type="email" placeholder="your.email@example.com" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="project">Project Type</Label>
-                    <Input id="project" name="project" placeholder="SaaS, MVP, AI Integration, etc." />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="budget">Budget Range</Label>
-                    <Input id="budget" name="budget" placeholder="$5k - $10k, $10k - $25k, etc." />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Project Details</Label>
-                    <Textarea 
-                      id="message" 
-                      name="message"
-                      placeholder="Tell me about your project, timeline, and requirements..."
-                      className="min-h-32"
-                    />
-                  </div>
-
-                  <Button className="w-full group relative overflow-hidden
-                                       bg-gradient-to-br from-white/20 via-white/10 to-white/5
-                                       backdrop-blur-xl border border-white/20
-                                       hover:bg-gradient-to-br hover:from-white/30 hover:via-white/15 hover:to-white/10
-                                       hover:border-white/30 hover:shadow-xl hover:shadow-cyan-500/20
-                                       transition-all duration-500 ease-out
-                                       before:absolute before:inset-0 before:bg-gradient-to-r 
-                                       before:from-transparent before:via-white/20 before:to-transparent
-                                       before:translate-x-[-200%] before:skew-x-12
-                                       hover:before:translate-x-[200%] before:transition-transform before:duration-1000
-                                       after:absolute after:inset-0 after:bg-gradient-to-br
-                                       after:from-cyan-400/5 after:via-blue-500/5 after:to-purple-600/5
-                                       after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500
-                                       disabled:opacity-50 disabled:cursor-not-allowed" size="lg" disabled={isPending}>
-                    <span className="bg-gradient-to-r from-foreground to-foreground/60 dark:from-white dark:to-gray-400 bg-clip-text text-transparent font-semibold group-hover:from-foreground group-hover:to-foreground/80 dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-300 relative z-10">
-                      {isPending ? "Sending..." : "Send Message"}
-                    </span>
-                  </Button>
-                </form>
-              </Card>
+            <div>
+              <h4 className="mclane-text-sm font-zalando text-gray-400 uppercase tracking-wide mb-4">
+                Location
+              </h4>
+              <p className="mclane-text-base font-zalando text-gray-700">
+                France • Available for remote work
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </motion.div>
-  );
+
+        {/* Contact form */}
+        <div className="col-span-12 md:col-span-16">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="project" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+                Project Type
+              </label>
+              <input
+                type="text"
+                id="project"
+                name="project"
+                className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
+                placeholder="Web App, SaaS, MVP, etc."
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors resize-none"
+                placeholder="Tell me about your project..."
+              />
+            </div>
+
+            {submitStatus === 'success' && (
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mclane-text-sm font-zalando text-green-600"
+              >
+                Message sent successfully! I'll get back to you soon.
+              </motion.p>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mclane-text-sm font-zalando text-red-600"
+              >
+                Something went wrong. Please try again.
+              </motion.p>
+            )}
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group flex items-center gap-2 mclane-text-sm font-zalando text-black border-b border-gray-400 hover:border-black pb-1 transition-colors disabled:opacity-50"
+            >
+              <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+              <motion.svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 16 16" 
+                fill="none"
+                animate={{ x: isSubmitting ? 0 : 2 }}
+                transition={{ duration: 0.2 }}
+              >
+                <path 
+                  d="M4 12L12 4M12 4H6M12 4V10" 
+                  stroke="currentColor" 
+                  strokeWidth="1.5" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </motion.svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  )
 }

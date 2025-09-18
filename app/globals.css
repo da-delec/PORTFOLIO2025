@@ -248,6 +248,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-xs:30rem;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -314,6 +316,7 @@
 
 :root {
   --radius: 0.625rem;
+  --primary: #5DB8FD;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -348,13 +351,13 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
+  --background: #191919;
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
+  --primary: #5DB8FD;
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
@@ -385,11 +388,124 @@
   * {
     @apply border-border outline-ring/50;
   }
-  html {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
+    font-family: 'Zalando Sans SemiExpanded', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
     @apply bg-background text-foreground;
+    background: #f8f9fa;
+    color: #000000;
+  }
+  
+  /* McLane-inspired grid system */
+  .mclane-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 11px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .mclane-grid {
+      grid-template-columns: repeat(24, 1fr);
+      padding: 0 40px;
+    }
+  }
+  
+  /* Apple-inspired typography system */
+  .mclane-text-xs { 
+    font-size: 11px; 
+    line-height: 1.4; 
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .mclane-text-sm { 
+    font-size: 13px; 
+    line-height: 1.4; 
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .mclane-text-base { 
+    font-size: 15px; 
+    line-height: 1.5; 
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .mclane-text-lg { 
+    font-size: 18px; 
+    line-height: 1.4; 
+    font-weight: 400;
+    letter-spacing: -0.011em;
+  }
+  .mclane-text-xl { 
+    font-size: 24px; 
+    line-height: 1.3; 
+    font-weight: 300;
+    letter-spacing: -0.022em;
+  }
+  .mclane-text-2xl { 
+    font-size: 32px; 
+    line-height: 1.2; 
+    font-weight: 300;
+    letter-spacing: -0.022em;
+  }
+  .mclane-text-3xl { 
+    font-size: 48px; 
+    line-height: 1.1; 
+    font-weight: 300;
+    letter-spacing: -0.025em;
+  }
+  .mclane-text-4xl { 
+    font-size: 64px; 
+    line-height: 1.05; 
+    font-weight: 300;
+    letter-spacing: -0.025em;
+  }
+  
+  /* Subtle animations */
+  .mclane-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mclane-hover:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Zalando Sans SemiExpanded utility class */
+  .font-zalando {
+    font-family: 'Zalando Sans SemiExpanded', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-zalando-medium {
+    font-family: 'Zalando Sans SemiExpanded', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-zalando-bold {
+    font-family: 'Zalando Sans SemiExpanded', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

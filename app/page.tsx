@@ -1,31 +1,26 @@
-
-import Image from "next/image";
-import { ModeToggle } from "@/components/toggleTheme";
-import Navbar from "./UI-COMPONENTS/Navbar";
+"use client"
 import { Hero } from "./UI-COMPONENTS/Hero";
-
-
-import { Skills } from "./UI-COMPONENTS/Skills";
-import { Services } from "./UI-COMPONENTS/Services";
 import { Projects } from "./UI-COMPONENTS/Projects";
-import { About } from "./UI-COMPONENTS/About";
+import About from "./UI-COMPONENTS/About";
+import { Hobbies } from "./UI-COMPONENTS/Hobbies";
 import { Contact } from "./UI-COMPONENTS/Contact";
+
 export default function Home() {
- 
   return (
     <>
-    <Navbar />
-    <Hero />
-    <Skills />
-    <About />
-    <Services />
-    <Projects />
-    <Contact />
-    <footer className="bg-muted/30 py-12">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
-            © 2025 Corentin Delesalle. Full Stack Developer based in France. Built with Next.js and Tailwind CSS.
-          </p>
+      <Hero />
+      <About />
+      <Hobbies />
+      <Projects />
+      <Contact />
+      
+      <footer className="bg-gray-50 py-16 border-t border-gray-200">
+        <div className="mclane-grid">
+          <div className="col-span-12 md:col-span-24 text-center">
+            <p className="mclane-text-sm font-zalando text-gray-500">
+              © 2024 Corentin Delesalle. Full Stack Developer based in France.
+            </p>
+          </div>
         </div>
       </footer>
     </>

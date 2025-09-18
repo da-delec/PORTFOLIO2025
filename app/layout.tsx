@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Infant } from "next/font/google";
 import { ThemeProvider } from "@/lib/themeWrapper";
+import Navbar from "./UI-COMPONENTS/Navbar";
 import "./globals.css";
+import LoaderPage from "./UI-COMPONENTS/Loader";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
+const cormorantInfant = Cormorant_Infant({
+  variable: "--font-cormorant-infant",
+  subsets: ["latin"],
+});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -109,8 +117,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-satoshi antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorantInfant.variable} font-zalando antialiased`}
       >
+            
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -119,6 +128,7 @@ export default function RootLayout({
 
         
         >
+      
           {children}
         </ThemeProvider>
       </body>

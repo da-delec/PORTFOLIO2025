@@ -1,115 +1,96 @@
 "use client"
-import { Card } from "@/components/ui/card";
-import { Music,Clapperboard, Code, Piano, Cpu, Trophy, HeartHandshake } from "lucide-react";
-import { useInView } from "motion/react";
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react"
+import { FaReact, FaNodeJs, FaPython } from "react-icons/fa"
+import { SiNextdotjs, SiTypescript, SiOpenai, SiVercel, SiPostgresql } from "react-icons/si"
 
-const passions = [
-  {
-    icon: Music,
-    title: "Rock Music",
-    description: "Passionate about rock music and music in general. Music fuels my creativity and keeps me energized while coding. Oh and I'm a big fan of Guns N' Roses and Ozzy Osbourne. 🤘  ",
-    color: "text-red-500"
-  },
-  {
-    icon:Clapperboard,
-    title: "Cinema",
-    description: "I love watching movies and TV shows. It's a great way to relax and escape from the daily grind. I'm a big fan of Quentin Tarantino and Christopher Nolan.",
-    color: "text-pink-500"
-  },
-  {
-    icon: Code,
-    title: "Coding",
-    description: "Love the art of coding and problem-solving. There's nothing quite like the satisfaction of building something from scratch.",
-    color: "text-blue-500"
-  },
-  {
-    icon: Piano,
-    title: "Piano",
-    description: "Currently learning to play piano. The discipline and precision required translates well to programming.",
-    color: "text-teal-600"
-  },
-  {
-    icon: Cpu,
-    title: "Technology",
-    description: "Always excited about emerging technologies and how they can be used to solve real-world problems.",
-    color: "text-green-500"
-  },
-  {
-    icon: Trophy,
-    title: "Chess",
-    description: "Strategic thinking in chess helps me approach complex coding challenges with patience and logic.",
-    color: "text-yellow-600"
-  }
- 
-];
+const technologies = [
+  { name: "React", icon: <FaReact />, category: "Frontend" },
+  { name: "Next.js", icon: <SiNextdotjs />, category: "Frontend" },
+  { name: "TypeScript", icon: <SiTypescript />, category: "Frontend" },
+  { name: "Node.js", icon: <FaNodeJs />, category: "Backend" },
+  { name: "Python", icon: <FaPython />, category: "Backend" },
+  { name: "PostgreSQL", icon: <SiPostgresql />, category: "Database" },
+  { name: "OpenAI", icon: <SiOpenai />, category: "AI" },
+  { name: "Vercel", icon: <SiVercel />, category: "Deployment" },
+]
 
-export function About() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: false,
-    amount: 0.1,
-  });
-
+export default function About() {
   return (
-    <motion.div 
-      ref={ref} 
-      initial={{ opacity: 0, y: 50 }} 
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl mb-6">
-                Beyond
-                <span className="block text-primary">Code</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                When I'm not building applications, you'll find me exploring my passions 
-                that keep me creative, focused, and constantly learning.
+    <section id="about" className="bg-gray-50 text-black py-24 border-t border-gray-200">
+      <div className="mclane-grid">
+        {/* Header */}
+        <div className="col-span-12 md:col-span-8 mb-16">
+          <h2 className="mclane-text-3xl font-zalando font-light mb-8">About</h2>
+          <div className="space-y-6">
+            <p className="mclane-text-lg font-zalando text-gray-700 leading-relaxed">
+              I'm a full-stack developer based in France, specializing in building 
+              modern web applications that bridge the gap between design and functionality.
+            </p>
+            <p className="mclane-text-base font-zalando text-gray-600 leading-relaxed">
+              With expertise in React, Next.js, and Node.js, I create scalable solutions 
+              that prioritize user experience and performance. I'm particularly passionate 
+              about AI integration and building SaaS platforms that solve real problems.
+            </p>
+          </div>
+        </div>
+
+        {/* Experience */}
+        <div className="col-span-12 md:col-span-8 mb-16">
+          <h3 className="mclane-text-xl font-zalando font-light mb-8">Experience</h3>
+          <div className="space-y-8">
+            <div className="border-l border-gray-200 pl-6">
+              <div className="flex items-center gap-4 mb-2">
+                <span className="mclane-text-xs font-zalando text-gray-400 uppercase tracking-wide">
+                  2023 - Present
+                </span>
+              </div>
+              <h4 className="mclane-text-lg font-zalando font-medium mb-2">Full Stack Developer</h4>
+              <p className="mclane-text-sm font-zalando text-gray-600">
+                Freelance • Building modern web applications and SaaS platforms
               </p>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {passions.map((passion, index) => {
-                const IconComponent = passion.icon;
-                return (
-                  <Card key={index} className="p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div className="text-center space-y-4">
-                      <div className="flex justify-center">
-                        <div className="flex items-center justify-center w-16 h-16 bg-background rounded-full shadow-md">
-                          <IconComponent className={`h-8 w-8 ${passion.color}`} />
-                        </div>
-                      </div>
-                      <h3 className="text-xl">{passion.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {passion.description}
-                      </p>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
-
-            <div className="text-center">
-              <Card className="p-8 max-w-4xl mx-auto">
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <HeartHandshake className="h-8 w-8 text-primary" />
-                  <h3 className="text-2xl">Let's Connect</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  I believe that great work comes from passionate people. Whether you want to discuss 
-                  a project, share music recommendations, talk about the latest tech trends, or even 
-                  challenge me to a chess game, I'd love to hear from you. Let's create something amazing together!
-                </p>
-              </Card>
+            
+            <div className="border-l border-gray-200 pl-6">
+              <div className="flex items-center gap-4 mb-2">
+                <span className="mclane-text-xs font-zalando text-gray-400 uppercase tracking-wide">
+                  2022 - 2023
+                </span>
+              </div>
+              <h4 className="mclane-text-lg font-zalando font-medium mb-2">Frontend Developer</h4>
+              <p className="mclane-text-sm font-zalando text-gray-600">
+                Various Projects • Specialized in React and modern web technologies
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </motion.div>
-  );
+
+        {/* Technologies */}
+        <div className="col-span-12 md:col-span-16">
+          <h3 className="mclane-text-xl font-zalando font-light mb-8">Technologies</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors border border-gray-100"
+              >
+                <div className="text-2xl text-gray-600 group-hover:text-black transition-colors mb-3">
+                  {tech.icon}
+                </div>
+                <span className="mclane-text-sm font-zalando text-gray-700 group-hover:text-black transition-colors">
+                  {tech.name}
+                </span>
+                <span className="mclane-text-xs font-zalando text-gray-400 mt-1">
+                  {tech.category}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -1,139 +1,43 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import { ModeToggle } from "@/components/toggleTheme"
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler"
+import Link from "next/link"
 
-// Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home", active: true },
-  { href: "#Project", label: "Projects" },
-  { href: "#Stack", label: "Stack" },
-  { href: "#About", label: "About" },
+  { href: "#", label: "Home" },
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
 ]
 
 export default function Navbar() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      <motion.div initial={{opacity:0, y:-20}} animate={{opacity:1, y:0}}  className="flex h-16 items-center justify-between  gap-4 px-4 md:px-6">
-      <h1 className=" hidden md:block   font-satoshi text-2xl  font-black ">Delesalle Corentin</h1>
-
-        {/* Left side */}
-        <div className="flex items-center gap-2">
-          {/* Mobile menu trigger */}
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                className=" size-8 md:hidden"
-                variant="ghost"
-                size="icon"
-              > <svg
-              className="pointer-events-none"
-              width={16}
-              height={16}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4 12L20 12"
-                className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
-              />
-              <path
-                d="M4 12H20"
-                className="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
-              />
-              <path
-                d="M4 12H20"
-                className="origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
-              />
-            </svg>
-              
-               
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent align="start" className="w-36 p-1 md:hidden bg-white/10 backdrop-blur-xl border-white/20 dark:bg-black/10 dark:border-white/10">
-              <NavigationMenu className="max-w-none *:w-full">
-                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index} className="w-full">
-                      <NavigationMenuLink
-                        href={link.href}
-                        className="py-1.5"
-                        active={link.active}
-                      >
-                        {link.label}
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </PopoverContent>
-          </Popover>
-          {/* Main nav */}
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-primary hover:text-primary/90">
-            </a>
-            {/* Navigation menu */}
-            <NavigationMenu className="max-md:hidden">
-              <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link, index) => (
-                  <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      active={link.active}
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary py-1.5 font-light transition-colors"
-                    >
-                      {link.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
+      <div className="mclane-grid py-4">
+        <div className="col-span-6 md:col-span-8">
+          <Link href="#" className="mclane-text-base font-medium text-white hover:text-gray-300 transition-colors">
+            Corentin Delesalle
+          </Link>
+        </div>
+        
+        <div className="col-span-6 md:col-span-16 flex justify-end">
+          <div className="hidden md:flex items-center gap-8">
+            {navigationLinks.map((link, index) => (
+              <Link 
+                key={index}
+                href={link.href} 
+                className="mclane-text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-          <h1 className=" md:hidden  text-lg font-satoshi  font-black">Delesalle Corentin</h1>
+          
+          {/* Mobile menu button */}
+          <button className="md:hidden text-white">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </button>
         </div>
-        {/* Right side */}
-        <div className="flex items-center gap-2">
-            <AnimatedThemeToggler className=" " />
-          <Button asChild variant="outline" size="sm" 
-                  className="group relative text-sm overflow-hidden
-                           bg-gradient-to-br from-white/20 via-white/10 to-white/5
-                           backdrop-blur-xl border border-white/20
-                           hover:bg-gradient-to-br hover:from-white/30 hover:via-white/15 hover:to-white/10
-                           hover:border-white/30 hover:shadow-xl hover:shadow-cyan-500/20
-                           transition-all duration-500 ease-out
-                           before:absolute before:inset-0 before:bg-gradient-to-r 
-                           before:from-transparent before:via-white/20 before:to-transparent
-                           before:translate-x-[-200%] before:skew-x-12
-                           hover:before:translate-x-[200%] before:transition-transform before:duration-1000
-                           after:absolute after:inset-0 after:bg-gradient-to-br
-                           after:from-cyan-400/5 after:via-blue-500/5 after:to-purple-600/5
-                           after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500">
-            <a href="#contact" className="relative z-10">
-              <span className="bg-gradient-to-r from-foreground to-foreground/60 dark:from-white dark:to-gray-400 bg-clip-text text-transparent font-semibold group-hover:from-foreground group-hover:to-foreground/80 dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-300">
-                Contact me
-              </span>
-            </a>
-          </Button>
-         
-        </div>
-      </motion.div>
-    </header>
+      </div>
+    </nav>
   )
 }
