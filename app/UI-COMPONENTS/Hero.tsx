@@ -65,8 +65,8 @@ export function Hero() {
           y: y
         }}
       >
-        <h2 className="text-[0.4em] ml-1 -mb-2 font-cabinet-medium">Hello, I'm</h2>
-        <h1>corentin</h1>
+        <motion.h2 initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1, delay:1}} className="text-[0.4em] ml-1 -mb-2 font-cabinet-medium">Hello, I'm</motion.h2>
+        <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1, delay:1.3}}>corentin</motion.h1>
       </motion.div>
     </section>
   )
