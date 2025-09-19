@@ -117,7 +117,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cormorantInfant.variable} font-zalando antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorantInfant.variable}  antialiased`}
       >
             
         <ThemeProvider

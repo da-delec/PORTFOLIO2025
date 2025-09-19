@@ -18,8 +18,20 @@ export function Hero() {
     <section 
       ref={ref} 
       className="min-h-screen text-black flex items-center justify-center relative overflow-hidden"
-     
     >
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/testBG.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'brightness(1.3) contrast(0.8)',
+          willChange: 'transform',
+          transform: 'translateZ(0)'
+        }}
+      />
       <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
