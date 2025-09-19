@@ -20,14 +20,17 @@ export function Hero() {
       className="min-h-screen text-black flex items-center justify-center relative overflow-hidden"
     >
       {/* Background image */}
-      <div 
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/testBG.png)',
+          backgroundImage: 'url(/final.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'brightness(1.3) contrast(0.8)',
+          filter: 'brightness(1.3) contrast(0.9)',
           willChange: 'transform',
           transform: 'translateZ(0)'
         }}

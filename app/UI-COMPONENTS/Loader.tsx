@@ -41,10 +41,10 @@ const LoaderPage = () => {
         >
           <div className="flex items-baseline">
             <NumberTicker 
-              className="font-cormorant text-6xl md:text-7xl text-black" 
+              className="font-cormorant text-6xl md:text-7xl" 
               value={100} 
             />
-            <span className="font-cormorant text-3xl md:text-4xl text-black/80 ml-1">%</span>
+            <span className="font-cormorant text-3xl md:text-4xl text-white ml-1">%</span>
           </div>
         </motion.div>
       </div>

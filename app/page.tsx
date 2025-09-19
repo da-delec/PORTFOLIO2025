@@ -6,6 +6,7 @@ import { Hobbies } from "./UI-COMPONENTS/Hobbies";
 import { useEffect, useState } from "react";
 import { Contact } from "./UI-COMPONENTS/Contact";
 import LoaderPage from "./UI-COMPONENTS/Loader";
+import { AnimatePresence } from "motion/react";
 
 export default function Home() {
   const [isFirstRender, setIsFirstRender] = useState(true)
@@ -13,16 +14,16 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsFirstRender(false)
-    }, 3000)
+    }, 2000)
   }, [])
 
-  if (isFirstRender) {
-    return <LoaderPage />
-  }
-
   return (
-    <>
-      <Hero />
+    <AnimatePresence mode="wait">
+      {isFirstRender ? (
+        <LoaderPage key="loader" />
+      ) : (
+        <div key="content">
+          <Hero />
       <About />
       <Hobbies />
       <Projects />
@@ -37,6 +38,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </>
+        </div>
+      )}
+    </AnimatePresence>
   );
 }
