@@ -120,17 +120,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${cormorantInfant.variable}  antialiased`}
       >
             
-        <ThemeProvider
-          attribute="class"
-          
-          
-            disableTransitionOnChange
-
-        
-        >
+    
       
           {children}
-        </ThemeProvider>
+       
       </body>
     </html>
   );
