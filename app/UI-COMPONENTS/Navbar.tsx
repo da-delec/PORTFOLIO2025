@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
       <div className="mclane-grid py-4">
         <div className="col-span-6 md:col-span-8">
-          <Link href="#" className="mclane-text-base font-medium text-white hover:text-gray-300 transition-colors">
+          <Link href="#" className="mclane-text-base font-cormorant-light text-white hover:text-gray-300 transition-colors">
             Corentin Delesalle
           </Link>
         </div>
@@ -23,7 +23,7 @@ export default function Navbar() {
               <Link 
                 key={index}
                 href={link.href} 
-                className="mclane-text-sm text-gray-400 hover:text-white transition-colors"
+                className="mclane-text-sm font-cabinet text-gray-400 hover:text-white transition-colors"
               >
                 {link.label}
               </Link>

@@ -20,13 +20,13 @@ export default function About() {
       <div className="mclane-grid">
         {/* Header */}
         <div className="col-span-12 md:col-span-8 mb-16">
-          <h2 className="mclane-text-3xl font-zalando font-light mb-8">About</h2>
+          <h2 className="mclane-text-3xl font-cormorant mb-8">About</h2>
           <div className="space-y-6">
-            <p className="mclane-text-lg font-zalando text-gray-700 leading-relaxed">
+            <p className="mclane-text-lg font-cabinet text-gray-700 leading-relaxed">
               I'm a full-stack developer based in France, specializing in building 
               modern web applications that bridge the gap between design and functionality.
             </p>
-            <p className="mclane-text-base font-zalando text-gray-600 leading-relaxed">
+            <p className="mclane-text-base font-cabinet text-gray-600 leading-relaxed">
               With expertise in React, Next.js, and Node.js, I create scalable solutions 
               that prioritize user experience and performance. I'm particularly passionate 
               about AI integration and building SaaS platforms that solve real problems.
@@ -36,28 +36,28 @@ export default function About() {
 
         {/* Experience */}
         <div className="col-span-12 md:col-span-8 mb-16">
-          <h3 className="mclane-text-xl font-zalando font-light mb-8">Experience</h3>
+          <h3 className="mclane-text-xl font-cormorant mb-8">Experience</h3>
           <div className="space-y-8">
             <div className="border-l border-gray-200 pl-6">
               <div className="flex items-center gap-4 mb-2">
-                <span className="mclane-text-xs font-zalando text-gray-400 uppercase tracking-wide">
+                <span className="mclane-text-xs font-cabinet text-gray-400 uppercase tracking-wide">
                   2023 - Present
                 </span>
               </div>
-              <h4 className="mclane-text-lg font-zalando font-medium mb-2">Full Stack Developer</h4>
-              <p className="mclane-text-sm font-zalando text-gray-600">
+              <h4 className="mclane-text-lg font-cormorant-light mb-2">Full Stack Developer</h4>
+              <p className="mclane-text-sm font-cabinet text-gray-600">
                 Freelance • Building modern web applications and SaaS platforms
               </p>
             </div>
             
             <div className="border-l border-gray-200 pl-6">
               <div className="flex items-center gap-4 mb-2">
-                <span className="mclane-text-xs font-zalando text-gray-400 uppercase tracking-wide">
+                <span className="mclane-text-xs font-cabinet text-gray-400 uppercase tracking-wide">
                   2022 - 2023
                 </span>
               </div>
-              <h4 className="mclane-text-lg font-zalando font-medium mb-2">Frontend Developer</h4>
-              <p className="mclane-text-sm font-zalando text-gray-600">
+              <h4 className="mclane-text-lg font-cormorant-light mb-2">Frontend Developer</h4>
+              <p className="mclane-text-sm font-cabinet text-gray-600">
                 Various Projects • Specialized in React and modern web technologies
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function About() {
 
         {/* Technologies */}
         <div className="col-span-12 md:col-span-16">
-          <h3 className="mclane-text-xl font-zalando font-light mb-8">Technologies</h3>
+          <h3 className="mclane-text-xl font-cormorant mb-8">Technologies</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {technologies.map((tech, index) => (
               <motion.div
@@ -80,10 +80,10 @@ export default function About() {
                 <div className="text-2xl text-gray-600 group-hover:text-black transition-colors mb-3">
                   {tech.icon}
                 </div>
-                <span className="mclane-text-sm font-zalando text-gray-700 group-hover:text-black transition-colors">
+                <span className="mclane-text-sm font-cabinet text-gray-700 group-hover:text-black transition-colors">
                   {tech.name}
                 </span>
-                <span className="mclane-text-xs font-zalando text-gray-400 mt-1">
+                <span className="mclane-text-xs font-cabinet text-gray-400 mt-1">
                   {tech.category}
                 </span>
               </motion.div>

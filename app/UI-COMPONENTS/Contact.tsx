@@ -29,25 +29,25 @@ export function Contact() {
       <div className="mclane-grid">
         {/* Header */}
         <div className="col-span-12 md:col-span-24 mb-16">
-          <h2 className="mclane-text-3xl font-zalando font-light">Let's Work Together</h2>
+          <h2 className="mclane-text-3xl font-cormorant">Let's Work Together</h2>
         </div>
 
         {/* Contact info */}
         <div className="col-span-12 md:col-span-8 mb-16 md:mb-0">
           <div className="space-y-12">
             <div>
-              <h3 className="mclane-text-xl font-zalando font-light mb-6">Get In Touch</h3>
+              <h3 className="mclane-text-xl font-cormorant mb-6">Get In Touch</h3>
               <div className="space-y-4">
                 <Link 
                   href="mailto:delesallecorentin3@gmail.com"
-                  className="block mclane-text-base font-zalando text-gray-700 hover:text-black transition-colors"
+                  className="block mclane-text-base font-cabinet text-gray-700 hover:text-black transition-colors"
                 >
                   delesallecorentin3@gmail.com
                 </Link>
                 <Link 
                   href="https://linkedin.com/in/corentindelesalle"
                   target="_blank"
-                  className="block mclane-text-base font-zalando text-gray-700 hover:text-black transition-colors"
+                  className="block mclane-text-base font-cabinet text-gray-700 hover:text-black transition-colors"
                 >
                   LinkedIn
                 </Link>
@@ -55,19 +55,19 @@ export function Contact() {
             </div>
 
             <div>
-              <h4 className="mclane-text-sm font-zalando text-gray-400 uppercase tracking-wide mb-4">
+              <h4 className="mclane-text-sm font-cabinet text-gray-400 uppercase tracking-wide mb-4">
                 Response Time
               </h4>
-              <p className="mclane-text-base font-zalando text-gray-700">
+              <p className="mclane-text-base font-cabinet text-gray-700">
                 Usually within 24 hours
               </p>
             </div>
 
             <div>
-              <h4 className="mclane-text-sm font-zalando text-gray-400 uppercase tracking-wide mb-4">
+              <h4 className="mclane-text-sm font-cabinet text-gray-400 uppercase tracking-wide mb-4">
                 Location
               </h4>
-              <p className="mclane-text-base font-zalando text-gray-700">
+              <p className="mclane-text-base font-cabinet text-gray-700">
                 France • Available for remote work
               </p>
             </div>
@@ -79,7 +79,7 @@ export function Contact() {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+                <label htmlFor="name" className="block mclane-text-sm font-cabinet text-gray-600 mb-2">
                   Name
                 </label>
                 <input
@@ -87,13 +87,13 @@ export function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-cabinet text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+                <label htmlFor="email" className="block mclane-text-sm font-cabinet text-gray-600 mb-2">
                   Email
                 </label>
                 <input
@@ -101,27 +101,27 @@ export function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
+                  className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-cabinet text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
                   placeholder="your.email@example.com"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="project" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+              <label htmlFor="project" className="block mclane-text-sm font-cabinet text-gray-600 mb-2">
                 Project Type
               </label>
               <input
                 type="text"
                 id="project"
                 name="project"
-                className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
+                className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-cabinet text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors"
                 placeholder="Web App, SaaS, MVP, etc."
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block mclane-text-sm font-zalando text-gray-600 mb-2">
+              <label htmlFor="message" className="block mclane-text-sm font-cabinet text-gray-600 mb-2">
                 Message
               </label>
               <textarea
@@ -129,7 +129,7 @@ export function Contact() {
                 name="message"
                 rows={4}
                 required
-                className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-zalando text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors resize-none"
+                className="w-full bg-transparent border-b border-gray-300 pb-2 mclane-text-base font-cabinet text-black placeholder-gray-400 focus:border-black focus:outline-none transition-colors resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>
@@ -138,7 +138,7 @@ export function Contact() {
               <motion.p 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mclane-text-sm font-zalando text-green-600"
+                className="mclane-text-sm font-cabinet text-green-600"
               >
                 Message sent successfully! I'll get back to you soon.
               </motion.p>
@@ -148,7 +148,7 @@ export function Contact() {
               <motion.p 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mclane-text-sm font-zalando text-red-600"
+                className="mclane-text-sm font-cabinet text-red-600"
               >
                 Something went wrong. Please try again.
               </motion.p>
@@ -157,7 +157,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group flex items-center gap-2 mclane-text-sm font-zalando text-black border-b border-gray-400 hover:border-black pb-1 transition-colors disabled:opacity-50"
+              className="group flex items-center gap-2 mclane-text-sm font-cabinet text-black border-b border-gray-400 hover:border-black pb-1 transition-colors disabled:opacity-50"
             >
               <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               <motion.svg 

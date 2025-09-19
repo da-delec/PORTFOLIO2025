@@ -40,7 +40,7 @@ export function Hobbies() {
       <div className="mclane-grid">
         {/* Header */}
         <div className="col-span-12 md:col-span-24 mb-16">
-          <h2 className="mclane-text-3xl font-zalando font-light text-center">Beyond Code</h2>
+          <h2 className="mclane-text-3xl font-cormorant text-center">Beyond Code</h2>
         </div>
 
         {/* Hobbies Cards */}
@@ -75,10 +75,10 @@ export function Hobbies() {
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <h3 className="mclane-text-2xl font-zalando font-medium text-white mb-3">
+                    <h3 className="mclane-text-2xl font-cormorant-light text-white mb-3">
                       {hobby.title}
                     </h3>
-                    <p className="mclane-text-base font-zalando text-gray-200">
+                    <p className="mclane-text-base font-cabinet text-gray-200">
                       {hobby.description}
                     </p>
                   </motion.div>

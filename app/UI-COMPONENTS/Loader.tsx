@@ -1,32 +1,54 @@
 "use client"
 import { NumberTicker } from "@/components/ui/number-ticker";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import React from 'react'
 import src from "@/public/publicLogo.png"
 import Image from 'next/image'
+
 const LoaderPage = () => {
   return (
- 
     <motion.div
-       initial={{opacity:0.7}}
-       animate={{opacity:1}}
-       exit={{opacity:0 ,}}
-       transition={{duration:1}}
-
-      className="min-h-screen bg-cover  flex justify-center items-end bg-center bg-no-repeat"
-      style={{backgroundImage: 'url(/loaderBackground.jpg)'}}
+      initial={{ opacity: 0.7 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen bg-cover flex justify-center items-end bg-center bg-no-repeat relative"
+      style={{ backgroundImage: 'url(/loaderBackground.jpg)' }}
     >
-       <div className=" w-full flex flex-col items-center" id="data-container">
-        <Image className=' mb-14' alt='logo' height={130} width={130} src={src} />
-        <div className=" w-full flex justify-end mb-6 mr-10 " id="couter">
-         <NumberTicker className=" font-[Cormorant] text-5xl md:text-6xl italic" value={100} />
-         <h1> %</h1>
-        </div>
-        </div>
-    
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/10"></div>
       
+      <div className="w-full flex flex-col items-center relative z-10 pb-16">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Image 
+            className="mb-16" 
+            alt="logo" 
+            height={140} 
+            width={140} 
+            src={src} 
+          />
+        </motion.div>
+        
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-full flex justify-end pr-10"
+        >
+          <div className="flex items-baseline">
+            <NumberTicker 
+              className="font-cormorant text-6xl md:text-7xl text-black" 
+              value={100} 
+            />
+            <span className="font-cormorant text-3xl md:text-4xl text-black/80 ml-1">%</span>
+          </div>
+        </motion.div>
+      </div>
     </motion.div>
-  
   )
 }
 

@@ -15,30 +15,59 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 100])
 
   return (
-    <section ref={ref} className="min-h-screen bg-gray-50 text-black flex items-center justify-center relative overflow-hidden">
-      <div className="max-w-2xl mx-auto px-6 text-center">
+    <section 
+      ref={ref} 
+      className="min-h-screen text-black flex items-center justify-center relative overflow-hidden"
+     
+    >
+      <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <p className="font-zalando font-medium mclane-text-lg md:mclane-text-xl mb-40 leading-relaxed text-black">
-            <span className=" font-[Cormorant] italic font-semibold">Full Stack developer based in France.</span> Specialized in building modern web applications 
+          <div className="flex items-center justify-center mb-6">
+            <div className="h-px bg-black/20 flex-1 max-w-24"></div>
+            <div className="mx-6">
+              <span className="font-cormorant text-black text-lg md:text-xl">
+                Full Stack developer based in France.
+              </span>
+            </div>
+            <div className="h-px bg-black/20 flex-1 max-w-24"></div>
+          </div>
+          
+          <p className="font-cabinet text-base md:text-lg mb-8 leading-relaxed text-black/80 max-w-2xl mx-auto">
+            Specialized in building modern web applications 
             with React, Next.js and Node.js. Currently available for new projects and collaborations.
           </p>
+          
+          <div className="flex items-center justify-center mb-32">
+            <div className="h-px bg-black/20 flex-1 max-w-20"></div>
+            <div className="mx-6 flex items-center space-x-4 text-sm font-cabinet text-black/60">
+              <span>Next.js</span>
+              <span className="text-black/30">•</span>
+              <span>Tailwind</span>
+              <span className="text-black/30">•</span>
+              <span>PostgreSQL</span>
+              <span className="text-black/30">•</span>
+              <span>29 ans</span>
+            </div>
+            <div className="h-px bg-black/20 flex-1 max-w-20"></div>
+          </div>
         </motion.div>
       </div>
-      <motion.h1 
-        className="absolute bottom-0 xs:mb-0  text-[118px] mb-20 xs:text-[150px] sm:text-[200px] md:text-[250px] lg:text-[300px] xl:text-[400px] font-zalando font-bold leading-none" 
+      
+      <motion.div 
+        className="absolute bottom-0 xs:mb-0 mb-20 text-[105px] xs:text-[130px] sm:text-[180px] md:text-[230px] lg:text-[270px] xl:text-[330px] font-cabinet-black leading-[0.85]" 
         style={{ 
-     
           filter: `blur(${blur}px)`,
           opacity: opacity,
           y: y
         }}
       >
-        corentin
-      </motion.h1>
+        <h2 className="text-[0.4em] ml-1 -mb-2 font-cabinet-medium">Hello, I'm</h2>
+        <h1>corentin</h1>
+      </motion.div>
     </section>
   )
 }
