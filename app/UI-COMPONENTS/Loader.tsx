@@ -41,7 +41,7 @@ const LoaderPage = () => {
         >
           <div className="flex items-baseline">
             <NumberTicker 
-              className="font-cormorant text-6xl md:text-7xl" 
+              className="font-cormorant text-6xl text-white md:text-7xl" 
               value={100} 
             />
             <span className="font-cormorant text-3xl md:text-4xl text-white ml-1">%</span>
